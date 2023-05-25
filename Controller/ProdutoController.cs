@@ -13,13 +13,24 @@ namespace ProductMVC.Controller
         Produto produto = new Produto();
 
         ProdutoView produtoView = new ProdutoView();
-
-
         public void ListarProdutos()
         {
+
+            //Listar de produtos chamada pela model
             List<Produto> produtos = produto.Ler();
 
             produtoView.Listar(produtos);
+        }
+
+        //metodo para controlar accesar o cadstro de progtamas]
+        public void CadastrarProduto()
+        {
+            //chama para a view que recen cada onjeto a ser iserido no csv
+            Produto novoProduto = produtoView.Cadastrar();
+
+
+            //chamada para a model para inserir esse onjeto na csv
+            produto.Inserir(novoProduto);
         }
     }
 }

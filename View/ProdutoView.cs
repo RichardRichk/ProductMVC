@@ -18,9 +18,35 @@ namespace ProductMVC.View
             {
                 Console.WriteLine($"\nCodigo: {item.Codigo}");
                 Console.WriteLine($"Nome: {item.Nome}");
-                Console.WriteLine($"Preco: {item.Preco:C2}");
-                                
+                Console.WriteLine($"Preco: {item.Preco:C2}");                            
             }
+        }
+
+        public Produto Cadastrar()
+        {
+            Produto novoProduto = new Produto();
+
+            Console.WriteLine($"Quantos produtos gostaria de cadastrar ?");
+            int quantidade = int.Parse(Console.ReadLine());
+            
+            for (var i = 0; i < quantidade; i++)
+            {
+                
+                Console.WriteLine($"Informe o codigo:");
+                novoProduto.Codigo = int.Parse(Console.ReadLine());
+
+                Console.WriteLine($"Informe o nome: ");
+                novoProduto.Nome = Console.ReadLine();
+                
+                Console.WriteLine($"Informe o preco: ");
+                novoProduto.Preco = float.Parse(Console.ReadLine());
+
+            }
+
+
+            return novoProduto;
+            
+            
         }
     }
 }

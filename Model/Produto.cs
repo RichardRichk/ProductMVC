@@ -59,5 +59,19 @@ namespace ProductMVC.Model
 
             return produtos;
         }
+
+        //metodo para preparar a linha do csv
+        public string PrepararLinhasCSV(Produto p)
+        {
+            return $"{p.Codigo};{p.Nome};{p.Preco}";
+        }
+
+        //metodo para inserir produto no arquivo csv
+        public void Inserir(Produto p)
+        {
+            string[] linhas = {PrepararLinhasCSV(p)};
+
+            File.AppendAllLines(PATH, linhas);
+        }
     }
 }

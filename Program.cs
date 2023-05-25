@@ -9,6 +9,7 @@ internal class Program
 
         ProdutoController controller = new ProdutoController();
 
+        controller.CadastrarProduto();
 
         controller.ListarProdutos();
     }
